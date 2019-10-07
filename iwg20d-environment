@@ -1,0 +1,29 @@
+ENVIRONMENT_FILE="/home/fabrizio/toolchains/2.0.1-iwavem-core-image-weston/environment"
+
+if [ -z "${FAB_DEPLOY_DIRECTORY}" ]; then
+	FAB_DEPLOY_DIRECTORY="/tftpboot/iwg20d/boot.in-progress/mine"
+fi
+
+MODULES_TARBALL_DEPLOY_DIRECTORY="${FAB_DEPLOY_DIRECTORY}"
+KERNEL_DEPLOY_DIRECTORIES="${FAB_DEPLOY_DIRECTORY}"
+DTB_DEPLOY_DIRECTORIES="${FAB_DEPLOY_DIRECTORY}"
+
+MODULES_INSTALL_DIRECTORIES=" \
+	/tftpboot/RZ-G1M \
+"
+
+DEVICE_TREE_FILES=" \
+	${DEVICE_TREE_FILES} \
+	r8a7743-iwg20d-q7.dtb \
+	r8a7743-iwg20d-q7-dbcm-ca.dtb \
+"
+
+CONFIGURATION_FRAGMENTS=" \
+	/data/testing/meta-cip-tests/recipes-kernel/linux/files/common.cfg \
+	/data/testing/meta-cip-tests/recipes-kernel/linux/files/missing_drivers.cfg \
+	/data/testing/meta-cip-tests/recipes-kernel/linux/files/arm/missing_architecture.cfg \
+	/data/testing/meta-cip-tests/recipes-kernel/linux/files/arm/missing_iwg20m.cfg \
+"
+
+KERNEL_IMAGE="uImage"
+DEFCONFIG="shmobile_defconfig"

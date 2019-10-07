@@ -1,0 +1,2 @@
+FAB_DEPLOY_DIRECTORY="/tftpboot/rzg2e/boot.in-progress/mine-4.19"
+source /home/fabrizio/environments/ek874-environment

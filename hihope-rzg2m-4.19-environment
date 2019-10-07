@@ -1,0 +1,2 @@
+FAB_DEPLOY_DIRECTORY="/tftpboot/rzg2m/boot.in-progress/mine-4.19.y-cip/"
+source /home/fabrizio/environments/hihope-rzg2m-environment

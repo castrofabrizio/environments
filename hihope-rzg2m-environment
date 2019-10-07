@@ -1,0 +1,43 @@
+ENVIRONMENT_FILE="/home/fabrizio/toolchains/weston-r8a7796-r8a774a1/environment"
+
+if [ -z "${FAB_DEPLOY_DIRECTORY}" ]; then
+	FAB_DEPLOY_DIRECTORY="/tftpboot/rzg2m/boot.in-progress/mine"
+fi
+
+MODULES_TARBALL_DEPLOY_DIRECTORY="${FAB_DEPLOY_DIRECTORY}"
+KERNEL_DEPLOY_DIRECTORIES="${FAB_DEPLOY_DIRECTORY}"
+DTB_DEPLOY_DIRECTORIES="${FAB_DEPLOY_DIRECTORY}"
+
+MODULES_INSTALL_DIRECTORIES=" \
+	/tftpboot/RZ-G2M/ \
+"
+
+DEVICE_TREE_FILES=" \
+	${DEVICE_TREE_FILES} \
+	renesas/r8a7796-salvator-x.dtb \
+	renesas/r8a7796-salvator-xs.dtb \
+	renesas/r8a7795-salvator-xs.dtb \
+	renesas/r8a774a1-hihope-rzg2m.dtb \
+	renesas/r8a774a1-hihope-rzg2m-ex.dtb \
+	renesas/r8a774a1-hihope-rzg2m-ex_C.dtb \
+	renesas/r8a774a1-hihope-rzg2m-ex_D.dtb \
+	renesas/r8a774a1-hihope-rzg2m-ex-idk-1110wr.dtb \
+"
+
+if [ -z ${CONFIGURATION_FRAGMENTS+x} ]; then
+	CONFIGURATION_FRAGMENTS=" \
+		/data/testing/meta-cip-tests/recipes-kernel/linux/files/common.cfg \
+		/data/testing/meta-cip-tests/recipes-kernel/linux/files/missing_drivers.cfg \
+		/data/testing/meta-cip-tests/recipes-kernel/linux/files/aarch64/missing_architecture.cfg \
+		/data/testing/meta-cip-tests/recipes-kernel/linux/files/aarch64/missing_hihope-rzg2m.cfg \
+	"
+fi
+
+PATCHES=" \
+	/data/testing/meta-cip-tests/recipes-kernel/linux/files/aarch64/0001-Skip-arch_sys_counter.patch \
+"
+
+KERNEL_IMAGE="Image"
+if [ -z "${DEFCONFIG}" ]; then
+	DEFCONFIG="defconfig"
+fi

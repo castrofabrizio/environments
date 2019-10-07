@@ -1,0 +1,3 @@
+FAB_DEPLOY_DIRECTORY="/tftpboot/rzg2e/boot.in-progress/mine-4.19-renesas_defconfig"
+DEFCONFIG_FILE="/data/testing/cip-kernel-config/4.19.y-cip/arm64/renesas_defconfig"
+source /home/fabrizio/environments/ek874-environment

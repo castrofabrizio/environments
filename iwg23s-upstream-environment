@@ -1,0 +1,2 @@
+FAB_DEPLOY_DIRECTORY="/tftpboot/iwg23s/boot.in-progress/upstream"
+source /home/fabrizio/environments/iwg23s-environment

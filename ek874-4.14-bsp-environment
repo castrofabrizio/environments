@@ -1,0 +1,6 @@
+FAB_DEPLOY_DIRECTORY="/tftpboot/rzg2e/boot.in-progress/4.14-modified"
+DEVICE_TREE_FILES="renesas/r8a77990-ebisu.dtb"
+source /home/fabrizio/environments/ek874-environment
+unset DEFCONFIG
+DEFCONFIG_FILE="/tmp/fab/meta-renesas/meta-rcar-gen3/recipes-kernel/linux/linux-renesas/defconfig"
+unset CONFIGURATION_FRAGMENTS
